@@ -8,8 +8,7 @@
 }
 :root {
   --type-first: Helvetica, Arial, sans-serif;
-  --type-second: 'Spectral', Georgia;
-
+  --type-second: "Spectral", Georgia;
 }
 html,
 body {
@@ -17,6 +16,7 @@ body {
 }
 
 body {
+  padding-top: 4rem;
   color: #333;
   font-family: var(--type-first);
 }
@@ -29,22 +29,21 @@ a {
   display: inline-block;
 }
 
-img{
-    display: block;
-    max-width: 100%;
+img {
+  display: block;
+  max-width: 100%;
 }
 
-button, input{
-    display: block;
-    font-size: 1rem;
-    line-height: 150%;
-    font-family: var(--type-first);
-    color: #333;
-    
+button,
+input {
+  display: block;
+  font-size: 1rem;
+  line-height: 150%;
+  font-family: var(--type-first);
+  color: #333;
 }
-.container{
-    max-width: 50rem;
-    padding:0 1rem;
-    margin: 0 auto;
-
+.container {
+  max-width: 50rem;
+  padding: 0 1rem;
+  margin: 0 auto;
 }
