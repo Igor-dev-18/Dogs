@@ -4,7 +4,11 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
-import './App.css';
+import "./App.css";
+import LoginForm from "./pages/Login/LoginForm/LoginForm";
+import LoginCreate from "./pages/Login/LoginCreate/LoginCreate";
+import LoginPasswordLost from "./pages/Login/LoginPasswordLost/LoginPasswordLost";
+import LoginPasswordReset from "./pages/Login/LoginPasswordReset/LoginPasswordReset";
 
 function App() {
   return (
@@ -12,7 +16,12 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="login" element={<Login />} />
+        <Route path="login" element={<Login />}>
+          <Route index element={<LoginForm />} />
+          <Route path="criar" element={<LoginCreate />} />
+          <Route path="perdeu" element={<LoginPasswordLost />} />
+          <Route path="resetar" element={<LoginPasswordReset />} />
+        </Route>
       </Routes>
       <Footer />
     </BrowserRouter>
