@@ -1,0 +1,50 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+:root {
+  --type-first: Helvetica, Arial, sans-serif;
+  --type-second: 'Spectral', Georgia;
+
+}
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  color: #333;
+  font-family: var(--type-first);
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+button, input{
+    display: block;
+    font-size: 1rem;
+    line-height: 150%;
+    font-family: var(--type-first);
+    color: #333;
+    
+}
+.container{
+    max-width: 50rem;
+    padding:0 1rem;
+    margin: 0 auto;
+
+}
