@@ -9,21 +9,24 @@ import LoginForm from "./pages/Login/LoginForm/LoginForm";
 import LoginCreate from "./pages/Login/LoginCreate/LoginCreate";
 import LoginPasswordLost from "./pages/Login/LoginPasswordLost/LoginPasswordLost";
 import LoginPasswordReset from "./pages/Login/LoginPasswordReset/LoginPasswordReset";
+import { UserStorage } from "./UserContext";
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="login" element={<Login />}>
-          <Route index element={<LoginForm />} />
-          <Route path="criar" element={<LoginCreate />} />
-          <Route path="perdeu" element={<LoginPasswordLost />} />
-          <Route path="resetar" element={<LoginPasswordReset />} />
-        </Route>
-      </Routes>
-      <Footer />
+      <UserStorage>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="login" element={<Login />}>
+            <Route index element={<LoginForm />} />
+            <Route path="criar" element={<LoginCreate />} />
+            <Route path="perdeu" element={<LoginPasswordLost />} />
+            <Route path="resetar" element={<LoginPasswordReset />} />
+          </Route>
+        </Routes>
+        <Footer />
+      </UserStorage>
     </BrowserRouter>
   );
 }
