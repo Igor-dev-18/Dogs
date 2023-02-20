@@ -1,11 +1,19 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../../UserContext";
+import styles from './Login.module.css';
 
 function Login() {
+
+  const {login} = useContext(UserContext);
+  if(login === true) return <Navigate to="/conta" />
   return (
-    <div>
-      <Outlet />
+    <section className={styles.login}>
+    <div className={styles.forms}>
+    <Outlet />
     </div>
+    </section>
   );
 }
 
