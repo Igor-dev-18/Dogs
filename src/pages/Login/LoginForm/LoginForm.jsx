@@ -43,7 +43,7 @@ function LoginForm() {
       <div className={styles.cadastro}>
         <h2 className={styles.subtitle}>Cadastre-se</h2>
         <p>Ainda não possui conta? Cadastre-se no site.</p>
-        <Link  className={stylesBtn.button} to="login/criar">Criar Conta</Link>
+        <Link  className={stylesBtn.button} to="criar">Criar Conta</Link>
       </div>
     </section>
   );
