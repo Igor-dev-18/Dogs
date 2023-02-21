@@ -1,8 +1,15 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
+import UserHeader from '../../components/User/UserHeader'
 
 function User() {
   return (
-    <div>User</div>
+ <section className='container'>
+    <UserHeader/>
+
+    <Outlet />
+
+ </section>
   )
 }
 
