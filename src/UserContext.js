@@ -70,6 +70,9 @@ export function UserStorage({ children }) {
           setLoading(false);
         }
       }
+      else{
+        setLogin(false);
+      }
     }
     autoLogin();
   }, [userLogout]);
