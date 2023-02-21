@@ -4,10 +4,13 @@ import Button from "../../../components/Forms/Button/Button";
 import useForm from "../../../Hooks/useForm";
 import { USER_POST } from "../../../api";
 import { useContext } from "react";
-import userContext from "../../../UserContext";
+import { UserContext } from "../../../UserContext";
+import useFetch from "../../../Hooks/useFetch";
+import Error from "../../../components/Helper/Error";
 
 function LoginCreate() {
-  const { userLogin } = useContext(userContext);
+  const { userLogin } = useContext(UserContext);
+  const { error, loading, request } = useFetch();
 
   const username = useForm();
   const email = useForm("email");
@@ -20,11 +23,11 @@ function LoginCreate() {
       email: email.value,
       password: password.value,
     });
-    const response = await fetch(url, options);
+    const { response, json } = await request(url, options);
     console.log(response);
-    if(response.ok){
+    if (response.ok) {
       // logar o usuário
-    userLogin(username.value, password.value);
+      userLogin(username.value, password.value);
     }
   }
 
@@ -35,7 +38,12 @@ function LoginCreate() {
         <Input label="Usuário" type="text" name="username" {...username} />
         <Input label="Email" type="email" name="email" {...email} />
         <Input label="Senha" type="password" name="password" {...password} />
-        <Button>Cadastrar</Button>
+        {loading ? (
+          <Button disabled>Cadastrando...</Button>
+        ) : (
+          <Button>Cadastrar</Button>
+        )}
+        <Error error={error} />
       </form>
     </section>
   );
