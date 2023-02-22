@@ -7,6 +7,8 @@ function UserHeader() {
   const [title, setTitle] = useState();
   const { pathname } = useLocation();
 
+
+
   useEffect(() => {
     switch (pathname) {
       case "/conta/estatisticas":
