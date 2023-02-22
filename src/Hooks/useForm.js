@@ -11,6 +11,10 @@ const types = {
     regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/,
     message: `A senha deve ter:8 caracteres no mínimo,1 Letra Maiúscula no mínimo, 1 Número no mínimo,1 Símbolo no mínimo: $*&@#`,
   },
+  number:{
+    regex:/^[0-9]+$/,
+    message: "Informe um valor númerico válido"
+  }
 };
 
 function useForm(type) {
