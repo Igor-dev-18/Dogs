@@ -11,10 +11,7 @@ import LoginPasswordLost from "./pages/Login/LoginPasswordLost/LoginPasswordLost
 import LoginPasswordReset from "./pages/Login/LoginPasswordReset/LoginPasswordReset";
 import { UserStorage } from "./UserContext";
 import User from "./pages/User/User";
-import Feed from './pages/Feed/Feed'
 import ProtectedRoute from "./components/Helper/ProtectedRoute";
-import UserPhotoPost from "./pages/User/UserPhotoPost";
-import UserStats from "./pages/User/UserStats";
 
 function App() {
   return (
@@ -29,11 +26,14 @@ function App() {
             <Route path="perdeu" element={<LoginPasswordLost />} />
             <Route path="resetar" element={<LoginPasswordReset />} />
           </Route>
-          <Route path="conta" element={<ProtectedRoute><User /></ProtectedRoute>}>
-            <Route index element={<Feed />} />
-            <Route path="postar" element={<UserPhotoPost />} />
-            <Route path="estatisticas" element={<UserStats />} />
-          </Route>
+          <Route
+            path="conta/*"
+            element={
+              <ProtectedRoute>
+                <User />
+              </ProtectedRoute>
+            }
+          ></Route>
         </Routes>
         <Footer />
       </UserStorage>
