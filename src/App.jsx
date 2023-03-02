@@ -14,6 +14,7 @@ import User from "./pages/User/User";
 import ProtectedRoute from "./components/Helper/ProtectedRoute";
 import Photo from "./components/Photo/Photo";
 import UserProfile from "./pages/User/UserProfile";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="criar" element={<LoginCreate />} />
             <Route path="perdeu" element={<LoginPasswordLost />} />
             <Route path="resetar" element={<LoginPasswordReset />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
           <Route
             path="conta/*"
@@ -38,6 +40,7 @@ function App() {
           ></Route>
           <Route path="foto/:id" element={<Photo />} />
           <Route path="perfil/:user" element={<UserProfile />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </UserStorage>
