@@ -12,6 +12,7 @@ import LoginPasswordReset from "./pages/Login/LoginPasswordReset/LoginPasswordRe
 import { UserStorage } from "./UserContext";
 import User from "./pages/User/User";
 import ProtectedRoute from "./components/Helper/ProtectedRoute";
+import Photo from "./components/Photo/Photo";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               </ProtectedRoute>
             }
           ></Route>
+          <Route path="foto/:id" element={<Photo />} />
         </Routes>
         <Footer />
       </UserStorage>
