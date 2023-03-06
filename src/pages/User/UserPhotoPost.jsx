@@ -7,6 +7,7 @@ import styles from "./UserPhotoPost.module.css";
 import { PHOTO_POST } from "../../api";
 import Error from "../../components/Helper/Error";
 import { useNavigate } from "react-router-dom";
+import Head from "../../components/Helper/Head";
 
 function UserPhotoPost() {
   const navigate = useNavigate();
@@ -48,6 +49,7 @@ function UserPhotoPost() {
   }
   return (
     <section className={`${styles.photoPost} animeLeft`}>
+      <Head title="Poste sua foto!" />
       <form onSubmit={handleSubmit}>
         <Input label="Nome" type="text" name="nome" {...nome} />
         <Input label="Peso" type="number" name="peso" {...peso} />
