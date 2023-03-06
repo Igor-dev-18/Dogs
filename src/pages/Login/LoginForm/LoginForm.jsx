@@ -38,7 +38,7 @@ function LoginForm() {
      
       </form>
       
-      <Link  className={styles.perdeu} to="login/perdeu">Perdeu a Senha?</Link>
+      <Link  className={styles.perdeu} to="perdeu">Perdeu a Senha?</Link>
 
       <div className={styles.cadastro}>
         <h2 className={styles.subtitle}>Cadastre-se</h2>
