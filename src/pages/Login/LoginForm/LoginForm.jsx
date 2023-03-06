@@ -36,7 +36,7 @@ function LoginForm() {
         {
           loading? <Button disabled >Carregando</Button>:<Button>Entrar</Button>
         }
-      <Error error={error} />
+      <Error error={error && "Dados incorretos!"} />
      
       </form>
       
